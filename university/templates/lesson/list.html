@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список занятий</title>
+</head>
+<body>
+
+    <h1>Расписание</h1>
+    <ul>
+        {% for lesson in object_list %}
+            <li>
+                <a href="{% url 'university:lesson-detail' lesson.pk %}">{{ lesson.id }}</a>
+                - {{ lesson.get_time_display }}
+                - {{ lesson.room }}
+                - {{ lesson.group }}
+            </li>
+        {% empty %}
+            <li>Занятий пока нет.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

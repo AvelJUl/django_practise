@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Детали занятия</title>
+</head>
+<body>
+
+    <h1>Занятие</h1>
+
+    <p>Время: {{ object.get_time_display }} </p>
+    <p>Аудитория: {{ object.room }} </p>
+    <p>Группа: {{ object.group.name }} </p>
+
+    <a href="{% url 'university:lesson-list' %}">Вернуться на главную</a>
+
+</body>
+</html>

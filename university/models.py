@@ -54,10 +54,12 @@ class Lesson(models.Model):
     )
     room = models.CharField('Аудитория', choices=Rooms.choices, max_length=50)
     time = models.CharField('Время начала', choices=Time.choices, max_length=50)
+    day = models.DateField('Дата занятия')
 
     class Meta:
         verbose_name = 'Занятие'
         verbose_name_plural = 'Занятия'
+        unique_together = [('room', 'time', 'day')]
 
     def __str__(self):
         return f'{self.time}: {self.group} {self.room}'
