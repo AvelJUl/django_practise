@@ -127,3 +127,4 @@ GitHub.sublime-settings
 .history
 
 local_settings.py
+/static/

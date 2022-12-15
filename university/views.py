@@ -5,7 +5,7 @@ from university.models import Lesson
 
 class ListLesson(ListView):
     model = Lesson
-    queryset = Lesson.objects.all()
+    queryset = Lesson.objects.order_by('-id')
     template_name = 'lesson/list.html'
 
 

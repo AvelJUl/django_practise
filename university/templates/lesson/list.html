@@ -1,8 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Список занятий</title>
+    <link rel="stylesheet" href="{% static 'style_2.css' %}">
 </head>
 <body>
 
@@ -10,7 +13,9 @@
     <ul>
         {% for lesson in object_list %}
             <li>
-                <a href="{% url 'university:lesson-detail' lesson.pk %}">{{ lesson.id }}</a>
+                <a href="{% url 'university:lesson-detail' lesson.pk %}">
+                    <img src="{% static 'python.png' %}" alt="My image" width="20 px">
+                    {{ lesson.id }}</a>
                 - {{ lesson.get_time_display }}
                 - {{ lesson.room }}
                 - {{ lesson.group }}
